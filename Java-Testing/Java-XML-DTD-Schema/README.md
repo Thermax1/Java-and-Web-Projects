@@ -1,4 +1,4 @@
-# Assignment 3 Part 3
+# Java XML Parser
 
 - Here, we create a custom xml, dtd, and xml schema
 - We created two DOM parsers, one that validates the dtd to the xml and the other validates the schema to the xml
