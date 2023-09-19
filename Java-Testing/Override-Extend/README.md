@@ -1,4 +1,4 @@
-# CS612-Assignment3-Part1
+# Java Override and Extending
 
 - In this part, we're implementing a parent class HospitalEmployee.
 - There are 3 subclasses called Doctor, Nurse, and Surgeon.
