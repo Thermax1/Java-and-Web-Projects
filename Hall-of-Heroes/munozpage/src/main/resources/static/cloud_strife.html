@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cloud Strife</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="./images/cloud-hero.jpg"
+        alt="Cool pose of Cloud Strife"
+      />
+      <h1>Ex-SOLDIER With An Attitude and a Big Sword</h1>
+    </header>
+
+    <div class="hero-info">
+      <p id="hero-name"></p>
+      <p id="hero-game"></p>
+      <p id="hero-weapon"></p>
+      <p id="hero-quote"></p>
+    </div>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/5HzVZwGi7u0?start=7"
+      title="Cloud Strife Doesn't Dance"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+
+    <script>
+      fetch("/heroes/1")
+        .then((response) => response.json())
+        .then((hero) => {
+          const heroName = document.getElementById("hero-name");
+          heroName.textContent = `Name: ${hero.name}`;
+
+          const heroGame = document.getElementById("hero-game");
+          heroGame.textContent = `Game: ${hero.game}`;
+
+          fetch("/heroes/1/factoids/1")
+            .then((response) => response.json())
+            .then((factoid) => {
+              const heroWeapon = document.getElementById("hero-weapon");
+              heroWeapon.textContent = `Iconic Weapon: ${factoid.weapon}`;
+
+              const heroQuote = document.getElementById("hero-quote");
+              heroQuote.textContent = `Favorite Quote: "${factoid.quote}"`;
+            })
+            .catch((error) => console.error(error));
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>

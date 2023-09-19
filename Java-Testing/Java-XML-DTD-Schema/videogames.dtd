@@ -1,0 +1,8 @@
+<!ELEMENT collection (game+)> <!-- The + means that child element game must occur one or more times in the collection element-->
+<!ELEMENT game (title, genre, format, price, console)>
+<!ELEMENT title (#PCDATA)> <!-- #PCDATA means that the text content should be parsed and processed by XML parser-->
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT format (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT console (#PCDATA)>
+<!ATTLIST game id CDATA #REQUIRED>

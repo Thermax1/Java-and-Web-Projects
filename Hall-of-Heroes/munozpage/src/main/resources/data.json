@@ -1,0 +1,36 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Cloud Strife",
+      "game": "Final Fantasy VII"
+    },
+    {
+      "id": 2,
+      "name": "Kain",
+      "game": "Blood Omen"
+    },
+    {
+      "id": 3,
+      "name": "John Shepard",
+      "game": "Mass Effect"
+    }
+  ],
+  "factoids": [
+    {
+      "id": 1,
+      "weapon": "Buster Sword",
+      "quote": "I don't dance."
+    },
+    {
+      "id": 2,
+      "weapon": "Soul Reaver",
+      "quote": "Once I embraced my powers, I realized Vorador was correct: We ARE gods. Dark Gods! And it is our duty... to thin the herd."
+    },
+    {
+      "id": 3,
+      "weapon": "M8 Avenger",
+      "quote": "Is that it? Vasir, I let the Destiny Ascension die with 10,000 people on board -- including the Council. I unleashed the rachni on the galaxy. So for your sake, I hope your escape plan doesn't hinge on me hesitating to shoot a damn hostage!"
+    }
+  ]
+}

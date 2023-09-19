@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kain</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="./images/kain-hero.jpg"
+        alt="Cool pose of Kain"
+      />
+      <h1>The Hero Who Chose to Doom the World</h1>
+    </header>
+
+    <div class="hero-info">
+      <p id="hero-name"></p>
+      <p id="hero-game"></p>
+      <p id="hero-weapon"></p>
+      <p id="hero-quote"></p>
+    </div>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/3nUUXkGigV0?start=30"
+      title="Legacy of Kain True Ending"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+
+    <script>
+      fetch("/heroes/2")
+        .then((response) => response.json())
+        .then((hero) => {
+          const heroName = document.getElementById("hero-name");
+          heroName.textContent = `Name: ${hero.name}`;
+
+          const heroGame = document.getElementById("hero-game");
+          heroGame.textContent = `Game: ${hero.game}`;
+
+          fetch("/heroes/2/factoids/2")
+            .then((response) => response.json())
+            .then((factoid) => {
+              const heroWeapon = document.getElementById("hero-weapon");
+              heroWeapon.textContent = `Iconic Weapon: ${factoid.weapon}`;
+
+              const heroQuote = document.getElementById("hero-quote");
+              heroQuote.textContent = `Favorite Quote: "${factoid.quote}"`;
+            })
+            .catch((error) => console.error(error));
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
